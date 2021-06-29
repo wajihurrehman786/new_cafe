@@ -1,5 +1,5 @@
 import React from 'react'
-import { faBars, faSearch, faCartPlus } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './Navbar.css';
