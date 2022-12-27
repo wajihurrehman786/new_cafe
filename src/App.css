@@ -1,12 +1,10 @@
 * {
-
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
 ul {
-
   list-style: none !important;
 }
 
@@ -15,41 +13,37 @@ a {
 }
 
 :root {
-
   --primary-white: #fff;
-  --primary-alt-white : #EEF3F8;
+  --primary-alt-white: #eef3f8;
   --primary-grey: #333;
   --primary-navbar: #bdf7f7;
-  --primary-bg-search: #EEF3F8;
+  --primary-bg-search: #eef3f8;
   --primary-orange: #f9ab00;
-  --primary-navy: #021E39;
-  --primary-green: #21B43D;
+  --primary-navy: #021e39;
+  --primary-green: #21b43d;
   /* --primary-green: #00503C; */
-  --primary-alt-green: #2FC64C;
+  --primary-alt-green: #2fc64c;
   --primary-purple: #6649b8;
-  --primary-custom-green: #B5FAC7;
+  --primary-custom-green: #b5fac7;
   --primary-custom-pink: #e52e71;
-  --primary-aqua : aqua;
-  --primary-brick-red: #8B4513;
-  --primary-peach : #fde1d2db;
-  --primary-bright-green: #1BD4A5;
-  --primary-bright-orange: #DD501D;
+  --primary-aqua: aqua;
+  --primary-brick-red: #8b4513;
+  --primary-peach: #fde1d2db;
+  --primary-bright-green: #1bd4a5;
+  --primary-bright-orange: #dd501d;
   --primary-red: red;
-  --primary-backdrop : #282c34;
+  --primary-backdrop: #282c34;
   --primary-alt-orange: #f1c17e;
-
+  --primary-spinner: #f38a24;
 }
 
 body {
-
   font-family: "Roboto Condensed", sans-serif !important;
   overflow-x: hidden;
 }
 
-
 body::-webkit-scrollbar {
   width: 6.4px;
-  
 }
 
 body::-webkit-scrollbar-track {
@@ -57,7 +51,6 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-
   background: var(--primary-purple);
   border-radius: 8px;
 }
