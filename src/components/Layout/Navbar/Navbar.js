@@ -10,12 +10,12 @@ const Navbar = () => {
   const renderNavbar = () => (
     <nav className="navbar navbar-expand-lg navbar-light ">
       <div className="container">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/">
           <img src={logo} alt="Logo.." className="logo" />
           <label style={{ fontSize: "14px", fontWeight: "bold" }}>
-            ind<span className="logo-label">iC</span>af&egrave;
+            Paradise<span className="logo-label">C</span>af&egrave;
           </label>
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -45,19 +45,25 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              <Link className="nav-link" to="/">
                 Sign In
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              <Link className="nav-link" to="/">
                 Register
-              </a>
+              </Link>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/">
+            <li
+              className={
+                window.location.pathname === "/cart"
+                  ? "nav-item active"
+                  : "nav-item"
+              }
+            >
+              <Link className="nav-link" to="/cart">
                 Cart
-              </a>
+              </Link>
             </li>
           </ul>
           <form className="d-flex">
