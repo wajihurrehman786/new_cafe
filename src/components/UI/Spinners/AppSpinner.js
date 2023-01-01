@@ -1,15 +1,24 @@
 import React from "react";
 import "./Spinner.css";
 import ScaleLoader from "react-spinners/ScaleLoader";
-const AppSpinner = () => {
+import { ClockLoader } from "react-spinners";
+const AppSpinner = ({ type = "scale" }) => {
   const renderSpinner = () => {
     return (
-      <div className="spinner">
-        <ScaleLoader
-          loading={true}
-          size={200}
-          color={"var(--primary-spinner)"}
-        />
+      <div className={type === "scale" ? "spinner" : "spinner-with-backdrop"}>
+        {type === "scale" ? (
+          <ScaleLoader
+            loading={true}
+            size={200}
+            color={"var(--primary-spinner)"}
+          />
+        ) : (
+          <ClockLoader
+            loading={true}
+            size={200}
+            color={"var(--primary-spinner)"}
+          />
+        )}
       </div>
     );
   };

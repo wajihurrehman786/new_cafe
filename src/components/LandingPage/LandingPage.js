@@ -10,7 +10,7 @@ const LandingPage = () => {
         <h1
           style={{ color: "var(--primary-orange)", fontFamily: "Roboto Bold" }}
         >
-          indiCaf&egrave;
+          Caf&egrave;
         </h1>
         <p>
           <button
