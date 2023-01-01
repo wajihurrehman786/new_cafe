@@ -1,4 +1,5 @@
 import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
 import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,13 +8,16 @@ import "./Navbar.css";
 import logo from "../../../assets/images/dosa.jpg";
 
 const Navbar = () => {
+  const { isAuthenticated } = useAuth0();
+  const { user } = useAuth0();
+
   const renderNavbar = () => (
     <nav className="navbar navbar-expand-lg navbar-light ">
       <div className="container">
         <Link className="navbar-brand" to="/">
           <img src={logo} alt="Logo.." className="logo" />
           <label style={{ fontSize: "14px", fontWeight: "bold" }}>
-            Paradise<span className="logo-label">C</span>af&egrave;
+            <span className="logo-label">C</span>af&egrave;
           </label>
         </Link>
         <button
@@ -40,20 +44,58 @@ const Navbar = () => {
                   : "nav-item"
               }
             >
-              <Link className="nav-link " aria-current="page" to="/Catalog">
+              <Link className="nav-link " aria-current="page" to="/catalog">
                 Browse
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/">
-                Sign In
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/">
-                Register
-              </Link>
-            </li>
+
+            {!isAuthenticated && (
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/signin">
+                    Sign In
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/signup">
+                    Register
+                  </Link>
+                </li>
+              </>
+            )}
+            {isAuthenticated && (
+              <li
+                className={
+                  window.location.pathname === "/me"
+                    ? "nav-item active"
+                    : "nav-item"
+                }
+              >
+                <Link className="nav-link" to="/me">
+                  <span
+                    style={{
+                      background: "var(--primary-navy)",
+                      color: "var(--primary-white)",
+                      padding: "5px 20px",
+                      borderRadius: "15px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {user.name}
+                  </span>
+                </Link>
+              </li>
+            )}
+
+            {isAuthenticated && (
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/signout">
+                    Sign Out
+                  </Link>
+                </li>
+              </>
+            )}
             <li
               className={
                 window.location.pathname === "/cart"
@@ -96,5 +138,4 @@ const Navbar = () => {
 
   return <>{renderNavbar()}</>;
 };
-
 export default Navbar;

@@ -50,11 +50,11 @@ const Menu = () => {
                 </div>
               </div>
 
-              <div class="card" style={{ width: "192px" }}>
-                <img class="card-img-top" src={image3} alt="Dish 3." />
-                <div class="card-body text-muted">
-                  <h5 class="card-title">Mexican Combo Meal</h5>
-                  <p class="card-text">
+              <div className="card" style={{ width: "192px" }}>
+                <img className="card-img-top" src={image3} alt="Dish 3." />
+                <div className="card-body text-muted">
+                  <h5 className="card-title">Mexican Combo Meal</h5>
+                  <p className="card-text">
                     Assortment of crunchy dorito served with salsa sausce and
                     mayonnaise.
                   </p>
